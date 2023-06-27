@@ -1,5 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;800&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+
+:root{
+
+  --darkBlue: hsl(218, 23%, 16%);
+  --lightCyan: hsl(193, 38%, 86%);
+  --NeonGreen: hsl(150, 100%, 66%);
+  --g: hsl(220, 22%, 16%);
+
+
+--grayishBlue: hsl(217, 19%, 38%);
+--darkGrayishBlue: hsl(217, 19%, 24%);
+--darkBlue: hsl(218, 23%, 16%);
+
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+body{
+  font-family: 'Manrope', sans-serif;
+  
+}
+
 .App {
   text-align: center;
+
+ 
+  
+}
+
+.advice-num{
+  font-size: .5em;
+  letter-spacing: 4px;
+  color:var(--NeonGreen);
+}
+
+.quote{
+  
+  font-weight:800;
+  color:var(--lightCyan);
+  font-size: 1em;
+  margin:1rem 0;
+  animation: fadeIn 1s ease-in;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
 }
 
 .App-logo {
@@ -7,15 +66,75 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container{
+  background:var(--darkGrayishBlue);
+  border-radius:10px;
+  padding: 2em;
+  max-width:400px;
+  margin-inline:auto;
+  margin: 2em;
+
+
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  position: relative;
+ 
 }
 
-.App-header {
-  background-color: #282c34;
+.splitter{
+  width:100%;
+  background: var(--lightCyan);
+  height:1px;
+  margin-bottom: 1rem;
+}
+
+.dice-wrapper{
+  position: absolute;
+  left: 50%;
+  bottom:0%;
+  transform: translate(-50%,50%);
+  width: 2em;
+  height: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background:var(--NeonGreen);
+  padding: 1.5rem;
+  border: none;
+  border-radius:50%;
+  transition: 300ms ease-in;
+}
+
+.dice-wrapper:hover,
+.dice-wrapper:active
+
+{
+  cursor: pointer;
+background: var(--NeonGreen);
+
+box-shadow: 0 0 5px var(--NeonGreen),
+0 0 15px var(--NeonGreen),
+0 0 30px var(--NeonGreen),
+0 0 70px var(--NeonGreen);
+}
+
+.dice{
+  
+  padding: 1rem;
+
+}
+
+.splitter-icon{
+  width: 100%;
+
+}
+
+
+
+.App {
+  background-color: var(--darkBlue);
   min-height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,15 +143,61 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+@media (prefers-color-scheme: light) {
+
+
+:root{
+--red:hsl(0, 0%, 98%);
+--NeonGreen:hsl(150, 100%, 40%);
+
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+	.App {
+   
+		background-color: var(--red);
+	}
+
+  .dice-wrapper{
+ 
+    background:hsl(150, 100%, 40%);
+
   }
-  to {
-    transform: rotate(360deg);
+
+ 
+
+  .advice-num{
+    color: hsl(150, 100%, 30%);
+    font-weight: 800;
   }
+
+  .container{
+    background:#fff;
+   
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    position: relative;
+  }
+
+  .quote{
+ 
+    color:#000;
+
+ 
+  }
+
+  .dice-wrapper:hover,
+.dice-wrapper:active
+
+{
+  cursor: pointer;
+background: var(--NeonGreen);
+
+box-shadow: 
+0 0 5px var(--NeonGreen),
+0 0 15px var(--NeonGreen),
+0 0 30px var(--NeonGreen),
+0 0 70px var(--NeonGreen);
+}
 }
