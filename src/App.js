@@ -6,23 +6,16 @@ import './App.css';
 
 
 function App() {
-  
-  
-  
+
   
 const [advice, setAdvice] = useState({id:1, advice:'Try Again'})
     
   const fetchData = async () => {
-  
 
   try {
     let response = await axios.get(`https://api.adviceslip.com/advice/${Math.floor(Math.random()*225)}`)
-  
  setAdvice(response.data.slip)
-
-    
-    
-    // console.log(advice.slip.id)
+console.log(advice.slip.id)
   }
 
       catch (error) {
@@ -34,14 +27,9 @@ const [advice, setAdvice] = useState({id:1, advice:'Try Again'})
 
     };
 
-
-
-
   
-    useEffect(() => {fetchData()}, [])
+    useEffect(() => {fetchData()},[])
     
-
-
 
   return (
   <div className="App">
@@ -50,7 +38,7 @@ const [advice, setAdvice] = useState({id:1, advice:'Try Again'})
       <div >
 
            <div>
-             <span className='advice-num'>ADVICE #{advice? advice.id  :'UH OH'}</span>
+             <span className='advice-num'>ADVICE #{advice? advice.id  :'UH OH!'}</span>
            </div>
           <div>
              <blockquote className={`quote fade-in `}
@@ -75,49 +63,8 @@ const [advice, setAdvice] = useState({id:1, advice:'Try Again'})
   )
 
 
-  
-
-
 }
 
-
-//    {
-//      if(advice) {
-//        return (
-//          (
-        
-//          )
-//        )
-//      }
-//      else {
-
-//        return (
-//          (<div>
-
-//            <div>
-//              <span className='advice-num'>UH OH!</span>
-//            </div>
-//            <div>
-//              <blockquote className='quote'>
-//                "Try Again Later"
-               
-//              </blockquote>
-//            </div>
-//            <img className='splitter-icon' src={splitter} alt="" />
-//            <button onClick={useFetchData} className='dice-wrapper'>
-//              <img className='dice' src={dice} alt="" />
-        
-//            </button>
-        
-//          </div>
-//          ))
-//      }
-//    }
-
-//    </div>
-//    </div>
-//  }
-  
 
 
 
